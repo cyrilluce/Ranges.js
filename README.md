@@ -1,6 +1,12 @@
 JavaScript区间计算库
 JavaScript ranges calculate library
 
+## 用法/Usage
+
+可参照test/test.js中的测试代码
+
+Refer to test code in `test/test.js`
+
 ## 示例/Sample
 
 标准用法/Standard usage
@@ -68,10 +74,14 @@ ranges.isConflict([expand('fe80::1'), expand('fe80::1de6:fa0a:892d:bf77')]); // 
 ranges.isContain(expand('fe80::1de6:fa0a:892d:bf77')); // true
 ```
 
-其它曾使用到的场景/Also used to solves these problems:
-使用html高亮搜索关键词/use html to highlight keywords
+其它曾使用到的场景 Also used to solves these problems
+
+使用html高亮搜索关键词 use html to highlight keywords
+
 this is `test`est word
+
 this is tes`test` word
+
 this is `testest` word
 
 ## License
