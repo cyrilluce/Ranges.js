@@ -1,5 +1,5 @@
 {
-  "name": "Ranges.js",
+  "name": "range-calculator",
   "version": "1.0.0",
   "description": "javascript ranges calculate library / JavaScript区间计算库",
   "main": "index.js",
