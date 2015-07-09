@@ -28,6 +28,8 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 .idea
+node_modules
+coverage
 
 # Thumbnails
 ._*

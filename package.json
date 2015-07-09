@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "node ./node_modules/mocha/bin/mocha ./test/*",
+    "test-ci": "node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/cyrilluce/Ranges.js/issues"
   },
-  "homepage": "https://github.com/cyrilluce/Ranges.js"
+  "homepage": "https://github.com/cyrilluce/Ranges.js",
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.17",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
+  }
 }

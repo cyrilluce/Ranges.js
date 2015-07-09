@@ -1,6 +1,9 @@
 JavaScript区间计算库
 JavaScript ranges calculate library
 
+[![Build Status](https://travis-ci.org/cyrilluce/Ranges.js.svg?branch=master)](https://travis-ci.org/cyrilluce/Ranges.js)
+[![Test Coverage](https://img.shields.io/coveralls/cyrilluce/Ranges.js/master.svg)](https://coveralls.io/r/cyrilluce/Ranges.js?branch=master)
+
 ## 用法/Usage
 
 可参照test/test.js中的测试代码
@@ -11,7 +14,7 @@ Refer to test code in `test/test.js`
 
 标准用法/Standard usage
 ```js
-var Ranges = require('Ranges');
+var Ranges = require('range-calculator');
 var ranges = new Ranges(1,10);
 ranges.add([21, 30]); // ranges.ranges = [ [1,10], [21,30] ]
 ranges.isConflict([11, 20]); // false
@@ -19,6 +22,7 @@ ranges.isConflict([25, 45]); // true
 ranges.add([11, 20]); // ranges.ranges = [ [1,30] ]
 ranges.sub([1,5]); // ranges.ranges = [ [6,30] ]
 ranges.sub([15,25]); // ranges.ranges = [ [6,14], [26,30] ]
+ranges.isContain(12); // true
 ```
 
 用于IPv4冲突判断/Use as IPv4 conflict detect
@@ -34,6 +38,11 @@ ranges.isContain(ipToNumber('192.168.1.125')); // true
 
 用于IPv6冲突判断（字串对比）Use as IPv6 conflict detect(string range)
 ```js
+// [JS] Expand Abbreviated IPv6 Addresses
+// by Christopher Miller
+// http://forrst.com/posts/JS_Expand_Abbreviated_IPv6_Addresses-1OR
+// Modified to work with embedded IPv4 addresses
+// https://gist.github.com/Mottie/7018157
 function expand(address)
 {
     var fullAddress = "";
@@ -78,11 +87,11 @@ ranges.isContain(expand('fe80::1de6:fa0a:892d:bf77')); // true
 
 使用html高亮搜索关键词 use html to highlight keywords
 
-this is `test`est word
+this is *test*est word
 
-this is tes`test` word
+this is tes*test* word
 
-this is `testest` word
+this is *testest* word
 
 ## License
 
